@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules
+    container_name: server-blog
+    ports:
+        - 4000:4000
+    command: npm run dev
